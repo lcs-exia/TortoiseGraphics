@@ -5,21 +5,16 @@ import TortoiseGraphics
 import CoreGraphics
 let myFrame = CGRect(x: 0, y: 0, width: 500, height: 500)
 let canvas = PlaygroundCanvas(frame: myFrame)
-    
+
 canvas.frameRate = 30
 canvas.color = .white
 PlaygroundPage.current.liveView = canvas
 
-canvas.drawing { turtle in
+canvas.drawing { alice in
+    alice.forward()
+    alice.right(150)
+    alice.forward(75)
     
-    turtle.penColor(.red)
-    turtle.fillColor(.red)
-    // Draw a square
-    for _ in 1...4{
-        turtle.forward(100)
-        turtle.right(90)
-    }
     
-    turtle.endFill()
-
+    
 }

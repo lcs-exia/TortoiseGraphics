@@ -10,11 +10,13 @@ canvas.frameRate = 30
 canvas.color = .white
 PlaygroundPage.current.liveView = canvas
 
+
+
 canvas.drawing { alice in
-    alice.forward()
-    alice.right(150)
-    alice.forward(75)
+
+    alice.exPLOSION(scaleFactor: 0.1)
     
+        
+    }
     
-    
-}
+

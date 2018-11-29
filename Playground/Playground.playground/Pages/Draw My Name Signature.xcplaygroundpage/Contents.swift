@@ -20,7 +20,7 @@ canvas.drawing { a in
     // Hide turtle because the icon gets larger when the pen size is increased
     a.hideTortoise()
     
-    // Draw name
+/*    // Draw name
     a.uppercaseE()
     a.lowercaseR()
     a.lowercaseI()
@@ -28,6 +28,8 @@ canvas.drawing { a in
     a.uppercaseX()
     a.lowercaseI()
     a.lowercaseA()
-    a.finalLine()
+    a.finalLine()   */
+    
+    a.signature(scaleFactor: 1)
 
 }

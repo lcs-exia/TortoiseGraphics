@@ -6,15 +6,20 @@ import CoreGraphics
 let myFrame = CGRect(x: 0, y: 0, width: 500, height: 500)
 let canvas = PlaygroundCanvas(frame: myFrame)
 
-canvas.frameRate = 30
+canvas.frameRate = 300
 canvas.color = .white
 PlaygroundPage.current.liveView = canvas
 
 
 
 canvas.drawing { alice in
-
-    alice.exPLOSION(scaleFactor: 0.1)
+    for x in stride(from: -200, to: 250, by: 100){
+        for y in stride(from: -200, to: 250, by: 125){
+            let z =
+            alice.exPLOSION(atX: Double(x), atY: Double(y), scaleFactor: 0.5)
+        }
+    }
+ 
     
         
     }

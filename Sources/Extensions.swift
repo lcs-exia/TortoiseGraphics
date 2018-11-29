@@ -303,7 +303,10 @@ public extension Tortoise {
         self.setHeading(-90)
         self.forward(450 * scale)
     }
-    func exPLOSION(scaleFactor scale: Double = 1.0) {
+    func exPLOSION(atX: Double, atY: Double, scaleFactor scale: Double = 1.0) {
+        self.penUp()
+        self.goto(atX, atY)
+        self.penDown()
         for _ in 1...100 {
 
             // Turn a random amount
@@ -316,7 +319,7 @@ public extension Tortoise {
 
             // Go back to centre of canvas and original heading
             self.penUp()
-            self.goto(0, 0)
+            self.goto(atX, atY)
             self.setHeading(0)
             self.penDown()
 

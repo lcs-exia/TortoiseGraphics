@@ -327,6 +327,50 @@ public extension Tortoise {
 
         // Hide the turtle when done
         self.hideTortoise()
+    }
+    func alogoTop(scaleFactor scale: Double = 1.0) {
+        //draw leaf of the apple
+        self.curve(withSides: 80, withSize: 6 * scale, drawSides: 20)
+        self.right(90)
+        self.curve(withSides: 80, withSize: 6 * scale, drawSides: 20)
+
+    }
+    func alogoBody(scaleFactor scale: Double = 1.0) {
+        // Move tortoise to draw the body of the apple
+        self.left(90)
+        self.forward(25 * scale)
+        self.right(130)
+
+        // Draw first curve of the apple
+        self.curve(withSides: -80, withSize: 8 * scale, drawSides: 25)
+
+        // Make curve steeper and larger to draw the more narrow curve of apple
+        self.curve(withSides: -90, withSize: 15 * scale, drawSides: 18)
+
+        // Draw the "lumps" at the bottom of the apple (able to use the inverse of that function to draw the middle of the "lumps" then use the same function to draw second "lump")
+        self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
+        self.curve(withSides: 40, withSize: 8 * scale, drawSides: 8)
+        self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
+
+        // Draw the start of the second half of the apple to the "hole" of the apple (able to use roughly same function as steeper end of the apple with slight alterations)
+        self.curve(withSides: -90, withSize: 15 * scale, drawSides: 8)
+
+        // Turn tortoise to a position to draw the "hole"
+        self.left(100)
+
+        // Draw hole of apple
+        self.curve(withSides: 40, withSize: 12 * scale, drawSides: 18)
+
+        // Turn tortoise to draw final part of apple
+        self.left(105)
+
+        // Draw final curve of apple (using a slightly altered version of the first curve of the apple)
+        self.curve(withSides: -80, withSize: 8 * scale, drawSides: 24)
+        self.setHeading(0)
+    }
+    func appleLogo(scaleFactor scale: Double = 1.0) {
+        alogoTop(scaleFactor: 1 * scale)
+        alogoBody(scaleFactor: 1 * scale)
 
     }
 }

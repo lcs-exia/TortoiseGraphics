@@ -12,5 +12,6 @@
         <page name='Draw My Name Signature'/>
         <page name='Line Art'/>
         <page name='Line Art 2'/>
+        <page name='Advanced Line Art'/>
     </pages>
 </playground>

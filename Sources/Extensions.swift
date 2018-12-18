@@ -329,6 +329,9 @@ public extension Tortoise {
         self.hideTortoise()
     }
     func alogoTop(scaleFactor scale: Double = 1.0) {
+        //Move turtle
+        self.right(130)
+        self.forward(25 * scale)
         //draw leaf of the apple
         self.curve(withSides: 80, withSize: 6 * scale, drawSides: 20)
         self.right(90)
@@ -336,10 +339,8 @@ public extension Tortoise {
 
     }
     func alogoBody(scaleFactor scale: Double = 1.0) {
-        // Move tortoise to draw the body of the apple
-        self.left(90)
-        self.forward(25 * scale)
-        self.right(130)
+        // Turn turtle
+        self.left(50)
 
         // Draw first curve of the apple
         self.curve(withSides: -80, withSize: 8 * scale, drawSides: 25)
@@ -366,12 +367,20 @@ public extension Tortoise {
 
         // Draw final curve of apple (using a slightly altered version of the first curve of the apple)
         self.curve(withSides: -80, withSize: 8 * scale, drawSides: 24)
-        self.setHeading(0)
+ //       self.setHeading(0)
     }
     func appleLogo(scaleFactor scale: Double = 1.0) {
-        alogoTop(scaleFactor: 1 * scale)
         alogoBody(scaleFactor: 1 * scale)
+        alogoTop(scaleFactor: 1 * scale)
 
+    }
+    func curvenoPen(withSides sideCount: Int, withSize size: Double, drawSides sideLimit: Int) {
+
+        for _ in 1...sideLimit {
+            self.forward(size)
+            self.right(360 / Double(sideCount))
+
+        }
     }
 }
 

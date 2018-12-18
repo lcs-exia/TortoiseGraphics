@@ -11,11 +11,17 @@ canvas.color = .white
 PlaygroundPage.current.liveView = canvas
 
 /* invoke built-in functions/methods
- wrote and invoke custom functions / methods
+ 
+ write and invoke custom functions / methods
+ 
  use variables and constants
+ 
  use different data types, like int, double, float, and boolean
+ 
  use iteration, via for or while loops
+ 
  use selection, via if statements
+ 
  work with arithmetic operators like * / + - and %
  */
 
@@ -23,7 +29,12 @@ PlaygroundPage.current.liveView = canvas
 
 canvas.drawing { a in
     // Hide tortoise
-    a.hideTortoise()
-    a.appleLogo(scaleFactor: 0.05)
+//    a.hideTortoise()
+    a.penUp()
+    a.forward(100)
 
+    a.alogoBody(scaleFactor: 1)
+
+    a.alogoTop()
+    
 }

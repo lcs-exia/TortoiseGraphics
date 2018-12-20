@@ -67,6 +67,7 @@ canvas.drawing { a in
     
     
     a.ghostappleLogo(scaleFactor: 1)
+    a.secondghostappleLogo(scaleFactor: 1)
     
 }
 

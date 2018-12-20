@@ -152,157 +152,6 @@ public extension Tortoise {
         self.setHeading(-90)
         self.forward(450 * scale)
     }
-    func signature (scaleFactor scale: Double = 1.0) {
-        //Uppercase E
-
-        //Turtle Face right
-        self.setHeading(90)
-
-        //Turn
-        self.right(210)
-
-        // Half Circle
-        self.curve(withSides: -40, withSize: 5 * scale, drawSides: 25)
-
-        //Turn
-        self.right(200)
-
-        // Half Circle
-        self.curve(withSides: -40, withSize: 5 * scale, drawSides: 25)
-
-        //Lowercase r
-
-        //Draw first curve half of r
-        self.curve(withSides: -40, withSize: 5 * scale, drawSides: 8)
-
-        //Turn
-        self.right(150)
-
-        //Draw small curve on top
-        self.curve(withSides: -40, withSize: 2.5 * scale, drawSides: 10)
-
-        //Turn
-        self.left(180)
-
-        //Draw final curve
-        self.curve(withSides: -40, withSize: 4 * scale, drawSides: 12)
-
-        //Lowercase i
-
-        //Draw first curve on i
-        self.curve(withSides: -30, withSize: 6.5 * scale, drawSides: 10)
-
-        //Turn
-        self.right(180)
-
-        // Draw second curve on i
-        self.curve(withSides: -30, withSize: 6.5 * scale, drawSides: 8)
-
-        //Move turtle for the dot on the i
-
-        //Don't need the following for signature I
-
-        /*        self.setHeading(0)
-         self.penUp()
-         self.forward(50)
-         self.left(90)
-         self.forward(37.5)
-         self.penDown()
-         //      Draw dot
-         self.curve(withSides: 10, withSize: 2, drawSides: 10)
-         
-         self.setHeading(90)
-         self.penUp()
-         self.forward(37.5)
-         self.right(90)
-         self.forward(50)
-         self.penDown()  */
-        self.setHeading(90)
-
-        // Lowercase c
-        // Turn turtle
-        self.curve(withSides: -50, withSize: 2 * scale, drawSides: 12)
-        // Draw curve on c to connect it to the i
-        self.curve(withSides: 30, withSize: 7 * scale, drawSides: 10)
-        self.right(180)
-        //Draw final 3/4 of circle to draw c
-        self.curve(withSides: -20, withSize: 7.5 * scale, drawSides: 15)
-
-        // Uppercase X
-        // Draw first curve of x
-        self.right(25)
-        self.curve(withSides: -80, withSize: 10 * scale, drawSides: 10)
-        // Move back to the bottom of c
-        self.right(180)
-        self.curve(withSides: 80, withSize: 10 * scale, drawSides: 10)
-        // Turn to face up
-        self.setHeading(0)
-        // Draw straight line to top of x
-        self.penDown()
-        self.forward(100 * scale)
-        // Turn for second curve
-        self.right(170)
-        //Draw second curve
-        self.curve(withSides: -80, withSize: 10 * scale, drawSides: 12)
-
-        //Lowercase i
-
-        //Draw first curve on i
-        self.curve(withSides: -30, withSize: 6.5 * scale, drawSides: 10)
-
-        //Turn
-        self.right(180)
-
-        // Draw second curve on i
-        self.curve(withSides: -30, withSize: 6.5 * scale, drawSides: 8)
-
-        //Move turtle for the dot on the i
-
-        //Don't need the following for signature I
-
-        /*        self.setHeading(0)
-         self.penUp()
-         self.forward(50)
-         self.left(90)
-         self.forward(37.5)
-         self.penDown()
-         //      Draw dot
-         self.curve(withSides: 10, withSize: 2, drawSides: 10)
-         
-         self.setHeading(90)
-         self.penUp()
-         self.forward(37.5)
-         self.right(90)
-         self.forward(50)
-         self.penDown()  */
-        self.setHeading(90)
-
-        // draw lowercase a
-        //setheading
-        self.setHeading(75)
-        // turn cursor
-        self.curve(withSides: -40, withSize: 5 * scale, drawSides: 5)
-        // draw connecting curve
-        self.curve(withSides: 30, withSize: 7.5 * scale, drawSides: 5)
-        //turn
-        self.right(180)
-        //draw circle
-        self.curve(withSides: -30, withSize: 3.5 * scale, drawSides: 30)
-        //turn
-        self.left(180)
-        // put cursor in position
-        self.curve(withSides: 30, withSize: 3.5 * scale, drawSides: 7)
-        //draw line
-        self.curve(withSides: -30, withSize: 5 * scale, drawSides: 5)
-
-        // Final line
-        // prepare turtle to draw line
-        self.curve(withSides: -30, withSize: 7 * scale, drawSides: 17)
-        self.penDown()
-        // setheading so line is in place
-        self.setHeading(-90)
-        self.forward(450 * scale)
-    }
     func exPLOSION(atX: Double, atY: Double, scaleFactor scale: Double = 1.0) {
         self.penUp()
         self.goto(atX, atY)
@@ -381,6 +230,38 @@ public extension Tortoise {
             self.right(360 / Double(sideCount))
 
         }
+
+        }
+    func ghostappleLogo(scaleFactor scale: Double = 1.0) {
+        // Apple logo body
+        // Turn turtle
+        self.left(50)
+        self.penUp()
+        // Draw first curve of the apple
+        self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 25)
+
+        // Make curve steeper and larger to draw the more narrow curve of apple
+        self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 18)
+
+        // Draw the "lumps" at the bottom of the apple (able to use the inverse of that function to draw the middle of the "lumps" then use the same function to draw second "lump")
+        self.curvenoPen(withSides: -40, withSize: 8 * scale, drawSides: 8)
+        self.curvenoPen(withSides: 40, withSize: 8 * scale, drawSides: 8)
+        self.curvenoPen(withSides: -40, withSize: 8 * scale, drawSides: 8)
+
+        // Draw the start of the second half of the apple to the "hole" of the apple (able to use roughly same function as steeper end of the apple with slight alterations)
+        self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 8)
+
+        // Turn tortoise to a position to draw the "hole"
+        self.left(100)
+
+        // Draw hole of apple
+        self.curvenoPen(withSides: 40, withSize: 12 * scale, drawSides: 18)
+
+        // Turn tortoise to draw final part of apple
+        self.left(105)
+
+        // Draw final curve of apple (using a slightly altered version of the first curve of the apple)
+        self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 24)
     }
 }
 

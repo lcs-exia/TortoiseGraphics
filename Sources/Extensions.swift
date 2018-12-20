@@ -233,13 +233,14 @@ public extension Tortoise {
 
         }
     func ghostappleLogo(scaleFactor scale: Double = 1.0) {
+        
         // Apple logo body
         // Turn turtle
         self.left(50)
         self.penUp()
         // Draw first curve of the apple
         self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 25)
-
+        
         // Make curve steeper and larger to draw the more narrow curve of apple
         self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 18)
 
@@ -262,6 +263,7 @@ public extension Tortoise {
 
         // Draw final curve of apple (using a slightly altered version of the first curve of the apple)
         self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 24)
+
     }
 }
 

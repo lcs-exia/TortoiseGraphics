@@ -64,9 +64,18 @@ canvas.drawing { a in
     a.left(90)
     a.forward(25)
     a.setHeading(0)
-
-    a.ghostappleLogo(scaleFactor: 1)
-    a.heading
+    
+    for x in stride(from: 0, to: 100, by: 5){
+        for _ in 1...10{
+            var head = a.heading
+        a.ghostappleLogo(scaleFactor: 1)
+            if x = *10{
+                a.appleLogo(scaleFactor: 0.05)
+                a.towards(head)
+            } else {
+                a.ghostappleLogo(scaleFactor: 1)
+        }
+    }
     
 }
 

@@ -28,31 +28,31 @@ PlaygroundPage.current.liveView = canvas
 
 
 canvas.drawing { a in
-   // Hide tortoise
-//    a.hideTortoise()
-
+    // Hide tortoise
+    //    a.hideTortoise()
+    
     // Move turtle into position for leaf
     a.penUp()
     a.forward(150)
     a.setHeading(45)
     a.forward(100)
     a.setHeading(0)
-
+    
     // Draw first half of leaf
     for _ in 1...4{
         a.appleLogo(scaleFactor: 0.05)
         a.curvenoPen(withSides: 80, withSize: 4, drawSides: 10)
     }
-
+    
     // Move turtle in position for second part of leaf
-
+    
     a.left(40)
     a.forward(30)
     a.right(220)
     a.forward(40)
-
+    
     // Draw second half of leaf
-
+    
     for _ in 1...2{
         a.right(180)
         a.appleLogo(scaleFactor: 0.05)
@@ -65,49 +65,39 @@ canvas.drawing { a in
     a.forward(25)
     a.setHeading(0)
     
-    for x in stride(from: 0, to: 100, by: 5){
-        for _ in 1...10{
-            var head = a.heading
-        a.ghostappleLogo(scaleFactor: 1)
-            if x = *10{
-                a.appleLogo(scaleFactor: 0.05)
-                a.towards(head)
-            } else {
-                a.ghostappleLogo(scaleFactor: 1)
-        }
-    }
+    
+    a.ghostappleLogo(scaleFactor: 1)
     
 }
 
-
 /* // Turn turtle
-self.left(50)
-
-// Draw first curve of the apple
-self.curve(withSides: -80, withSize: 8 * scale, drawSides: 25)
-
-// Make curve steeper and larger to draw the more narrow curve of apple
-self.curve(withSides: -90, withSize: 15 * scale, drawSides: 18)
-
-// Draw the "lumps" at the bottom of the apple (able to use the inverse of that function to draw the middle of the "lumps" then use the same function to draw second "lump")
-self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
-self.curve(withSides: 40, withSize: 8 * scale, drawSides: 8)
-self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
-
-// Draw the start of the second half of the apple to the "hole" of the apple (able to use roughly same function as steeper end of the apple with slight alterations)
-self.curve(withSides: -90, withSize: 15 * scale, drawSides: 8)
-
-// Turn tortoise to a position to draw the "hole"
-self.left(100)
-
-// Draw hole of apple
-self.curve(withSides: 40, withSize: 12 * scale, drawSides: 18)
-
-// Turn tortoise to draw final part of apple
-self.left(105)
-
-// Draw final curve of apple (using a slightly altered version of the first curve of the apple)
-self.curve(withSides: -80, withSize: 8 * scale, drawSides: 24)
-//       self.setHeading(0)
-}
-*/
+ self.left(50)
+ 
+ // Draw first curve of the apple
+ self.curve(withSides: -80, withSize: 8 * scale, drawSides: 25)
+ 
+ // Make curve steeper and larger to draw the more narrow curve of apple
+ self.curve(withSides: -90, withSize: 15 * scale, drawSides: 18)
+ 
+ // Draw the "lumps" at the bottom of the apple (able to use the inverse of that function to draw the middle of the "lumps" then use the same function to draw second "lump")
+ self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
+ self.curve(withSides: 40, withSize: 8 * scale, drawSides: 8)
+ self.curve(withSides: -40, withSize: 8 * scale, drawSides: 8)
+ 
+ // Draw the start of the second half of the apple to the "hole" of the apple (able to use roughly same function as steeper end of the apple with slight alterations)
+ self.curve(withSides: -90, withSize: 15 * scale, drawSides: 8)
+ 
+ // Turn tortoise to a position to draw the "hole"
+ self.left(100)
+ 
+ // Draw hole of apple
+ self.curve(withSides: 40, withSize: 12 * scale, drawSides: 18)
+ 
+ // Turn tortoise to draw final part of apple
+ self.left(105)
+ 
+ // Draw final curve of apple (using a slightly altered version of the first curve of the apple)
+ self.curve(withSides: -80, withSize: 8 * scale, drawSides: 24)
+ //       self.setHeading(0)
+ }
+ */

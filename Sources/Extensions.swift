@@ -233,16 +233,87 @@ public extension Tortoise {
 
         }
     func ghostappleLogo(scaleFactor scale: Double = 1.0) {
-        
+
         // Apple logo body
-        // Turn turtle
-        self.left(50)
+
         self.penUp()
-        // Draw first curve of the apple
-        self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 25)
-        
+
+
+        // save heading
+        var currentHeading = self.heading
+        var currentX = self.xcor
+        var currentY = self.ycor
+
+        // Draw small apple
+        self.appleLogo(scaleFactor: 0.05)
+
+        // restore prior heading and position
+        self.setHeading(currentHeading)
+        self.goto(currentX, currentY)
+
+        // Draw next part of big apple
+        self.setHeading(0)
+        self.left(50)
+        self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 13)
+
+        // Save heading and position
+        currentHeading = self.heading
+        currentX = self.xcor
+        currentY = self.ycor
+
+        // Draw little apple
+        self.appleLogo(scaleFactor: 0.05)
+
+        // Restore and position
+        self.setHeading(currentHeading)
+        self.goto(currentX, currentY)
+
+        // Draw next part of big apple
+        self.curvenoPen(withSides: -80, withSize: 8 * scale, drawSides: 12)
+
+
+        // Save heading and position
+        currentHeading = self.heading
+        currentX = self.xcor
+        currentY = self.ycor
+
+        // Draw little apple
+        self.appleLogo(scaleFactor: 0.05)
+
+        // Restore and position
+        self.setHeading(currentHeading)
+        self.goto(currentX, currentY)
+
         // Make curve steeper and larger to draw the more narrow curve of apple
-        self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 18)
+        self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 9)
+        
+        // Save heading and position
+        currentHeading = self.heading
+        currentX = self.xcor
+        currentY = self.ycor
+        
+        // Draw little apple
+        self.appleLogo(scaleFactor: 0.05)
+        
+        // Restore and position
+        self.setHeading(currentHeading)
+        self.goto(currentX, currentY)
+        
+        // Draw rest of steep curve
+        self.curvenoPen(withSides: -90, withSize: 15 * scale, drawSides: 9)
+        self.penUp()
+        
+        // Save heading and position
+        currentHeading = self.heading
+        currentX = self.xcor
+        currentY = self.ycor
+        
+        // Draw little apple
+        self.appleLogo(scaleFactor: 0.05)
+        
+        // Restore and position
+        self.setHeading(currentHeading)
+        self.goto(currentX, currentY)
 
         // Draw the "lumps" at the bottom of the apple (able to use the inverse of that function to draw the middle of the "lumps" then use the same function to draw second "lump")
         self.curvenoPen(withSides: -40, withSize: 8 * scale, drawSides: 8)
